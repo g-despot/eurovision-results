@@ -1,0 +1,14 @@
+- slug: eurovision-results
+  title: "Eurovision results"
+  bio: "Eurovision Song Contest results from 1975 to 2019"
+  category: "Entertainment"
+  types:
+    geo: true
+    ml: false
+  counts:
+    nodes: 53
+    edges: 30297
+    lines: 31528
+  samples:
+  - title: 'Show how many times a country won the Eurovision Song Contest and order the countries by the number of victories'
+    query: 'MATCH (c:Country)-[i:IS]-(w:Winner) RETURN c.name AS Country, count(i) AS Victories ORDER BY Victories DESC;'
