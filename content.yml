@@ -91,7 +91,7 @@ sections:
       - type: query
         content: |
           ```cypher
-          MATCH (c:Country)-[v:VOTE_JURY]->(:Country)<-[i:IS]-(w:Winner)
+          MATCH (c:Country)-[v:VOTE_JURY]->(:Country)-[i:IS]->(w:Winner)
           WHERE v.points = 0 AND v.year=i.year
           RETURN c.name AS Country, count(v) AS WasWrong
           ORDER BY WasWrong DESC
